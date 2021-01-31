@@ -11,6 +11,9 @@ logger = CustomLogger.get_logger(__name__)
 
 
 def main():
+    """
+    Main function to start the process
+    """
     url = ("https://registers.esma.europa.eu/solr/esma_registers_firds_files/select?q=*&"
            "fq=publication_date:%5B2021-01-17T00:00:00Z+TO+2021-01-19T23:59:59Z%5D&wt=xml&indent=true&start=0&rows=100")
     download_xml_file(url)
@@ -96,5 +99,3 @@ def xml_to_csv(file_path):
     finally:
         logger.info("{0}: Out".format(xml_to_csv.__name__))
 
-
-main()
